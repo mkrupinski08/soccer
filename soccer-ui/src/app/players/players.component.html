@@ -1,0 +1,36 @@
+<h1>Players</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Player</a>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th style="width: 30%">Name</th>
+    <th style="width: 30%">Surname</th>
+    <th style="width: 30%">Team</th>
+    <th style="width: 30%">Position</th>
+    <th style="width: 30%">Num</th>
+    <th style="width: 30%">BirthDate</th>
+    <th style="width: 30%">Age</th>
+    <th style="width: 30%">Height</th>
+    <th style="width: 30%">Weight</th>
+    <th style="width: 10%"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let player of players">
+    <td>{{player.name}}</td>
+    <td>{{player.surname}}</td>
+    <td>{{player.team}}</td>
+    <td>{{player.position}}</td>
+    <td>{{player.num}}</td>
+    <td>{{player.birthDate}}</td>
+    <td>{{player.age}}</td>
+    <td>{{player.height}}</td>
+    <td>{{player.weight}}</td>
+  </tr>
+  <tr *ngIf="!players">
+    <td colspan="4" class="text-center">
+      <span class="spinner-border spinner-border-lg align-center"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>

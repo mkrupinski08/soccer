@@ -1,0 +1,26 @@
+﻿<h1>Activities</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Activity</a>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th style="width: 30%">Timestamp</th>
+    <th style="width: 30%">Activity type</th>
+    <th style="width: 30%">Player</th>
+    <th style="width: 30%">Match</th>
+    <th style="width: 10%"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let activity of activities">
+    <td>{{activity.timestamp}}</td>
+    <td>{{activity.activityType}}</td>
+    <td>{{activity.player}}</td>
+    <td>{{activity.match}}</td>
+  </tr>
+  <tr *ngIf="!activities">
+    <td colspan="4" class="text-center">
+      <span class="spinner-border spinner-border-lg align-center"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>

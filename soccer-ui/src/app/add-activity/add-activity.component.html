@@ -1,0 +1,45 @@
+<h1>{{title}}</h1>
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="mb-3 col">
+      <label class="form-label">Timestamp</label>
+      <input type="number" formControlName="timestamp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.timestamp.errors }" />
+      <div *ngIf="submitted && f.timestamp.errors" class="invalid-feedback">
+        <div *ngIf="f.timestamp.errors.required">Timestamp is required</div>
+      </div>
+    </div>
+    <div class="mb-3 col">
+      <label class="form-label">Activity type</label>
+      <input type="string" formControlName="activityType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.activityType.errors }" />
+      <div *ngIf="submitted && f.activityType.errors" class="invalid-feedback">
+        <div *ngIf="f.activityType.errors.required">Activity type is required</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-3 col">
+      <label class="form-label">Player</label>
+      <input type="string" formControlName="player" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.player.errors }" />
+      <div *ngIf="submitted && f.player.errors" class="invalid-feedback">
+        <div *ngIf="f.player.errors.required">Player is required</div>
+      </div>
+    </div>
+    <div class="mb-3 col">
+      <label class="form-label">Match</label>
+      <input type="string" formControlName="match" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.match.errors }" />
+      <div *ngIf="submitted && f.match.errors" class="invalid-feedback">
+        <div *ngIf="f.match.errors.required">Match is required</div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <button [disabled]="submitting" class="btn btn-primary">
+      <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+      Save
+    </button>
+    <a routerLink="" class="btn btn-link">Cancel</a>
+  </div>
+</form>
+<div *ngIf="loading" class="text-center m-5">
+  <span class="spinner-border spinner-border-lg align-center"></span>
+</div>

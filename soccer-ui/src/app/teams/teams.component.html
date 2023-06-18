@@ -1,0 +1,24 @@
+<h1>Teams</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Team</a>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th style="width: 30%">Name</th>
+    <th style="width: 30%">FoundationDate</th>
+    <th style="width: 30%">Players</th>
+    <th style="width: 10%"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let team of teams">
+    <td>{{team.name}}</td>
+    <td>{{team.foundationDate}}</td>
+    <td>{{team.players}}</td>
+  </tr>
+  <tr *ngIf="!teams">
+    <td colspan="4" class="text-center">
+      <span class="spinner-border spinner-border-lg align-center"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>

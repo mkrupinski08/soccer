@@ -1,0 +1,28 @@
+<h1>Match</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Match</a>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th style="width: 30%">Game Date</th>
+    <th style="width: 30%">Host</th>
+    <th style="width: 30%">Guest</th>
+    <th style="width: 30%">Result</th>
+    <th style="width: 30%">Name</th>
+    <th style="width: 10%"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let m of match">
+    <td>{{m.gameDate}}</td>
+    <td>{{m.host}}</td>
+    <td>{{m.guest}}</td>
+    <td>{{m.result}}</td>
+    <td>{{m.name}}</td>
+  </tr>
+  <tr *ngIf="!match">
+    <td colspan="4" class="text-center">
+      <span class="spinner-border spinner-border-lg align-center"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>
